@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cp startScriptClient ../startScriptClient
+echo "copy startScriptClient"
+cp lubuntu-rc.xml ../.config/openbox/lubuntu-rc.xml
+echo "copy lubuntu shortcuts"
+
+
