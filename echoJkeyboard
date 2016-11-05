@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "source ~/.jSet/jkeyboard" >> ~/.bashrc
+echo "source ~/.jSet/jkeyboard"
+
+
+
