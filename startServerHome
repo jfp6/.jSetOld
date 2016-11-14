@@ -1,6 +1,0 @@
-#!/bin/bash
-
-
-sudo exportfs -a
-sudo service nfs-kernel-server start
-

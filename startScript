@@ -1,0 +1,72 @@
+#!/bin/bash
+echo "
+      J. Prince 11/14/2013
+     "
+
+USAGE="
+      USAGE: $0 -m <name> 
+"
+
+
+#Use getopts to pass the flags to variables
+while getopts "m:" opt; do
+  case $opt in
+    m) if [ -n $OPTARG ]; then
+	MACHINE=$OPTARG
+	fi
+      ;;
+    \?)
+      echo "$USAGE" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [ $MACHINE == "jprince" ]
+    then
+    echo "start jprince"
+    sudo mount /dev/sda1 /media/joseph/mozart
+    sudo mount /dev/sdb1 /media/joseph/sea
+    sudo mount /dev/sdc1 /media/joseph/land
+    sudo mount /dev/sdd1 /media/joseph/sky
+    sudo mount /dev/sdf /media/joseph/work
+    sudo mount /dev/sdg1 /media/joseph/backup
+    sudo mount /dev/sdh1 /media/joseph/bach
+
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+fi
+
+if [ $MACHINE == "gold" ]
+    then
+    echo "start cluster client caldera "
+    sudo mount 10.0.0.2:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 10.0.0.2:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 10.0.0.2:/home /mnt/nfs/home
+    sudo mount 10.0.0.2:/media/joseph/backup /mnt/nfs/backup
+    sudo mount 10.0.0.2:/media/joseph/work /mnt/nfs/work
+    sudo mount 10.0.0.2:/nfs/sky
+    sudo mount 10.0.0.2:/media/joseph/sea /mnt/nfs/sea
+    sudo mount 10.0.0.2:/media/joseph/land /mnt/nfs/land
+fi
+
+if [ $MACHINE == "dell" ]
+    then
+    echo "start dell"
+    cd /media/
+    mount -t vboxsf Dropbox /media/windows-share/
+    cd ~
+fi
+
+if [ $MACHINE == "envy" ]
+    then
+    echo "start envy"
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+fi
+
+
