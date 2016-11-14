@@ -49,7 +49,7 @@ if [ $MACHINE == "gold" ]
     sudo mount 10.0.0.2:/home /mnt/nfs/home
     sudo mount 10.0.0.2:/media/joseph/backup /mnt/nfs/backup
     sudo mount 10.0.0.2:/media/joseph/work /mnt/nfs/work
-    sudo mount 10.0.0.2:/nfs/sky
+    sudo mount 10.0.0.2:/media/joseph/sky /mnt/nfs/sky
     sudo mount 10.0.0.2:/media/joseph/sea /mnt/nfs/sea
     sudo mount 10.0.0.2:/media/joseph/land /mnt/nfs/land
 fi
