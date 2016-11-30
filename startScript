@@ -66,6 +66,22 @@ if [ $MACHINE == "dell" ]
     cd ~
 fi
 
+if [ $MACHINE == "precision" ]
+    then
+    echo "start precision"
+    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.168:/home /mnt/nfs/home
+    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
+    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.168:/media/joseph/sky /mnt/nfs/sky
+    sudo mount 172.17.1.168:/media/joseph/sea /mnt/nfs/sea
+    sudo mount 172.17.1.168:/media/joseph/land /mnt/nfs/land
+    sudo ./.screenlayout/screen.sh
+    sudo mount -t vboxsf K_DRIVE /media/joseph/arc
+    sudo mount -t vboxsf J_DRIVE /media/joseph/joan
+fi 
+
 if [ $MACHINE == "envy" ]
     then
     echo "start envy"
