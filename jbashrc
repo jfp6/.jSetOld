@@ -1,5 +1,6 @@
 # OpenFOAM
 alias of4='source /opt/openfoam4/etc/bashrc'
+alias ofe='source $HOME/foam/foam-extend-3.0/etc/bashrc'
 alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
 alias ofoptdev='source /opt/openfoam-dev/etc/bashrc'
 alias oxygen='firefox file://$WM_PROJECT_DIR/doc/Doxygen/html/index.html'
