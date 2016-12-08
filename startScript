@@ -61,6 +61,8 @@ fi
 if [ $MACHINE == "dell" ]
     then
     echo "start dell"
+    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
     cd /media/
     mount -t vboxsf Dropbox /media/windows-share/
     cd ~
