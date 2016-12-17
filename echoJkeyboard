@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt-get install xkbset
 echo "source ~/.jSet/jkeyboard" >> ~/.bashrc
 echo "source ~/.jSet/jkeyboard"
 
