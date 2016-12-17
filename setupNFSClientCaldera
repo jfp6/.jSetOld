@@ -1,8 +1,0 @@
-#!/bin/bash
-
-cp startScriptClientCaldera ../startScriptClientCaldera
-echo "copy startScriptClientCaldera"
-cp lubuntu-rc.xml ../.config/openbox/lubuntu-rc.xml
-echo "copy lubuntu shortcuts"
-cp vimrc ../.vimrc
-echo "copy vimrc"

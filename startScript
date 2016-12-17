@@ -91,4 +91,18 @@ if [ $MACHINE == "envy" ]
     sudo service nfs-kernel-server start
 fi
 
+if [ $MACHINE == "alpha" ]
+    then
+    echo "start alpha"
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+fi
+if [ $MACHINE == "bravo" ]
+    then
+    echo "start bravo"
+    sudo mount alpha:/home /mnt/nfs/alphaHome
+fi
+
+
+
 
