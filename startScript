@@ -26,9 +26,9 @@ while getopts "m:" opt; do
   esac
 done
 
-if [ $MACHINE == "jprince" ]
+if [ $MACHINE == "aluminum" ]
     then
-    echo "start jprince"
+    echo "start aluminum"
     sudo mount /dev/sda1 /media/joseph/mozart
     sudo mount /dev/sdb1 /media/joseph/sea
     sudo mount /dev/sdc1 /media/joseph/land
