@@ -102,6 +102,14 @@ if [ $MACHINE == "bravo" ]
     echo "start bravo"
     sudo mount alpha:/home /mnt/nfs/alphaHome
 fi
+if [ $MACHINE == "india" ]
+    then
+    echo "start india"
+    sudo mount alpha:/home /mnt/nfs/alphaHome
+    sudo service smbd restart
+    sudo service nmbd restart
+fi
+
 
 
 
