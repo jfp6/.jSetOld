@@ -54,7 +54,7 @@ if [ $MACHINE == "gold" ]
     sudo mount 172.17.1.168:/media/joseph/sky /mnt/nfs/sky
     sudo mount 172.17.1.168:/media/joseph/sea /mnt/nfs/sea
     sudo mount 172.17.1.168:/media/joseph/land /mnt/nfs/land
-
+    
     sudo /etc/init.d/opensmd start
 fi
 
