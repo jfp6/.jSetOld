@@ -30,12 +30,10 @@ if [ $MACHINE == "aluminum" ]
     then
     echo "start aluminum"
     sudo mount /dev/sdh1 /media/joseph/mozart
-    sudo mount /dev/sdb1 /media/joseph/sea
-    sudo mount /dev/sdc1 /media/joseph/land
-    sudo mount /dev/sda1 /media/joseph/sky
     sudo mount /dev/sdf /media/joseph/work
     sudo mount /dev/sdd1 /media/joseph/backup
     sudo mount /dev/sdg1 /media/joseph/bach
+    sudo mount /dev/sdi1 /media/joseph/brahms
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
@@ -51,10 +49,8 @@ if [ $MACHINE == "gold" ]
     sudo mount 172.17.1.168:/home /mnt/nfs/home
     sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
     sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.168:/media/joseph/sky /mnt/nfs/sky
-    sudo mount 172.17.1.168:/media/joseph/sea /mnt/nfs/sea
-    sudo mount 172.17.1.168:/media/joseph/land /mnt/nfs/land
-    
+    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
+
     sudo /etc/init.d/opensmd start
 fi
 
@@ -63,6 +59,10 @@ if [ $MACHINE == "dell" ]
     echo "start dell"
     sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
     sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
+    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
+    
     cd /media/
     mount -t vboxsf Dropbox /media/windows-share/
     cd ~
@@ -76,9 +76,9 @@ if [ $MACHINE == "precision" ]
     sudo mount 172.17.1.168:/home /mnt/nfs/home
     sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
     sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.168:/media/joseph/sky /mnt/nfs/sky
-    sudo mount 172.17.1.168:/media/joseph/sea /mnt/nfs/sea
-    sudo mount 172.17.1.168:/media/joseph/land /mnt/nfs/land
+    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
+
+
     sudo ./.screenlayout/screen.sh
     sudo mount -t vboxsf K_DRIVE /media/joseph/arc
     sudo mount -t vboxsf J_DRIVE /media/joseph/joan
