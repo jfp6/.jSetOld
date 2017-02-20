@@ -108,7 +108,7 @@ if [ $MACHINE == "india" ]
     echo "start india"
     sudo mount alpha:/home /mnt/nfs/alphaHome
     sudo exportfs -a
-    sudo service nfs-kernal-server start
+    sudo service nfs-kernel-server start
     sudo service smbd restart
     sudo service nmbd restart
 fi
