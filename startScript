@@ -44,13 +44,16 @@ fi
 if [ $MACHINE == "gold" ]
     then
     echo "start cluster client caldera "
-    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.168:/home /mnt/nfs/home
-    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
-    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
-
+#    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
+#    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
+#    sudo mount 172.17.1.168:/home /mnt/nfs/home
+#    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
+#    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
+#    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount paladium:/home /mnt/nfs/paladiumHome
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+ 
     sudo /etc/init.d/opensmd start
 fi
 
@@ -101,11 +104,14 @@ if [ $MACHINE == "bravo" ]
     then
     echo "start bravo"
     sudo mount alpha:/home /mnt/nfs/alphaHome
+    sudo mount india:/home /mnt/nfs/indiaHome
 fi
 if [ $MACHINE == "india" ]
     then
     echo "start india"
     sudo mount alpha:/home /mnt/nfs/alphaHome
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
     sudo service smbd restart
     sudo service nmbd restart
 fi
