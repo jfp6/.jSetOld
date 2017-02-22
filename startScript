@@ -29,11 +29,11 @@ done
 if [ $MACHINE == "aluminum" ]
     then
     echo "start aluminum"
-    sudo mount /dev/sdb1 /media/joseph/mozart
-    sudo mount /dev/sdc1 /media/joseph/bach
-    sudo mount /dev/sdd  /media/joseph/work
-    sudo mount /dev/sde1 /media/joseph/brahms
-    sudo mount /dev/sdf1 /media/joseph/backup
+    sudo mount /dev/sdd1 /media/joseph/mozart
+    sudo mount /dev/sde1 /media/joseph/bach
+    sudo mount /dev/sdf  /media/joseph/work
+    sudo mount /dev/sda1 /media/joseph/brahms
+    sudo mount /dev/sdb1 /media/joseph/backup
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
