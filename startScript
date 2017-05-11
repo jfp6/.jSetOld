@@ -66,9 +66,9 @@ if [ $MACHINE == "dell" ]
     sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
     sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
     
-    cd /media/
-    mount -t vboxsf Dropbox /media/windows-share/
-    cd ~
+    #cd /media/
+    #mount -t vboxsf Dropbox /media/windows-share/
+    #cd ~
 fi
 
 if [ $MACHINE == "precision" ]
