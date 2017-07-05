@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo mkdir -p /mnt/nfs/brahms 
+sudo mkdir -p /mnt/nfs/bach
+sudo mkdir -p /mnt/nfs/backup
+sudo mkdir -p /mnt/nfs/mozart
+sudo mkdir -p /mnt/nfs/work
+sudo mkdir -p /mnt/nfs/haydn
+sudo mkdir -p /mnt/nfs/home
+sudo mkdir -p /mnt/nfs/palladiumHome
+
