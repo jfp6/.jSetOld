@@ -51,7 +51,7 @@ endif
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
-nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
+nnoremap <buffer> <F5> <Esc>:w<CR>:exec '!python3' shellescape(@%, 1)<cr>
 
 :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 :set autoindent
