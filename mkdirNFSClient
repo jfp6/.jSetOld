@@ -8,4 +8,4 @@ sudo mkdir -p /mnt/nfs/work
 sudo mkdir -p /mnt/nfs/haydn
 sudo mkdir -p /mnt/nfs/home
 sudo mkdir -p /mnt/nfs/palladiumHome
-
+echo "mkdir nfs directories"
