@@ -29,12 +29,13 @@ done
 if [ $MACHINE == "aluminum" ]
     then
     echo "start aluminum"
-    sudo mount /dev/sde1 /media/joseph/mozart
-    sudo mount /dev/sdf1 /media/joseph/bach
+    sudo mount /dev/sdg1 /media/joseph/bach
+    sudo mount /dev/sdf1 /media/joseph/mozart
     sudo mount /dev/sdc1  /media/joseph/haydn
     sudo mount /dev/sda1 /media/joseph/brahms
-    sudo mount /dev/sdb1 /media/joseph/backup
-    sudo mount /dev/sdg /media/joseph/work
+    sudo mount /dev/sdb1 /media/joseph/vivaldi
+    sudo mount /dev/sdh /media/joseph/work
+    sudo mount /dev/sdd1 /media/joseph/chopin
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
@@ -45,13 +46,14 @@ fi
 if [ $MACHINE == "gold" ]
     then
     echo "start cluster client caldera "
-    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.168:/home /mnt/nfs/home
-    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
-    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
-    sudo mount 172.17.1.168:/media/joseph/haydn /mnt/nfs/haydn
+    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/home /mnt/nfs/home
+    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
     sudo mount paladium:/home /mnt/nfs/paladiumHome
     sudo exportfs -a
     sudo service nfs-kernel-server start
@@ -92,13 +94,14 @@ fi
 if [ $MACHINE == "iron" ]
     then
     echo "start iron - just drives"
-    sudo mount 172.17.1.168:/media/joseph/mozart /mnt/nfs/mozart
-    sudo mount 172.17.1.168:/media/joseph/bach /mnt/nfs/bach
-    sudo mount 172.17.1.168:/home /mnt/nfs/home
-    sudo mount 172.17.1.168:/media/joseph/backup /mnt/nfs/backup
-    sudo mount 172.17.1.168:/media/joseph/work /mnt/nfs/work
-    sudo mount 172.17.1.168:/media/joseph/brahms /mnt/nfs/brahms
-    sudo mount 172.17.1.168:/media/joseph/haydn /mnt/nfs/haydn
+    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/home /mnt/nfs/home
+    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
 fi 
 
 if [ $MACHINE == "envy" ]
