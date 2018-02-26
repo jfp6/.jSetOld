@@ -56,5 +56,5 @@ echo "$(($NJOBS*$INCREMENT))"
 for i in `seq 0 $(($NJOBS-1))`
     do
         echo "Running $APPNAME -time '$(($TLOW+$INCREMENT*$i)):$(($TLOW+$INCREMENT*$i+$INCREMENT))' > rLog$i &"
-        $($APPNAME -time $(($TLOW+$INCREMENT*$i)):$(($TLOW+$INCREMENT*$i+$INCREMENT)) > rLog$i &)
+        $($APPNAME -time $(($TLOW+$INCREMENT*$i)):$(($TLOW+$INCREMENT*$i+$INCREMENT)) > rLog$TLOW$i &)
     done
