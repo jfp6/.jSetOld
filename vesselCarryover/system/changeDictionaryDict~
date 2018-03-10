@@ -1,0 +1,47 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dictionaryReplacement
+{
+    boundary
+    {
+        "inlet"
+        {
+            type            patch;
+        }
+        "outlet"
+        {
+            type            patch;
+        }
+        "outletSlurry"
+        {
+            type            patch;
+        }
+        "sym"
+        {
+            type            symmetry;
+        }
+        "auto0"
+        {
+            name	auto0;
+            type        wall;
+           
+        }
+    }
+
+}
+
+// ************************************************************************* //

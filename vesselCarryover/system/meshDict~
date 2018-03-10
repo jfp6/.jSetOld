@@ -1,0 +1,140 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          | 
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         | 
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version   2.0;
+    format    ascii;
+    class     dictionary;
+    location  "system";
+    object    meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+radiusCylinder 3;
+yCylinderBase 1;
+yCylinderTop 5;
+waterSurfaceH 5; 
+waterSurfaceRadius .6;
+blastTubeInletH 10.3;
+blastTubeRadius .35;
+
+vaporSpaceCellSize 0.08;
+refineCellSize 0.04;
+
+surfaceFile "output/input.fms";
+
+
+maxCellSize .12;
+
+boundaryCellSize $maxCellSize; //refined by patch refinement
+
+minCellSize .05;
+
+localRefinement
+{
+    auto0
+    {
+        cellSize 0.05;
+    }
+    outletSlurry
+    {
+        cellSize 0.04;
+    }
+}
+
+objectRefinements
+{
+/*    sphereRefine
+    {
+    	cellSize .005;
+    	type sphere;
+    	centre (.25 .7 .25);
+    	radius .3;
+    }
+*/
+    baseConeRefine 
+    {
+        cellSize $refineCellSize; 
+        type cone; 
+        p0 (0 $yCylinderBase 0); 
+        radius0 $radiusCylinder;
+        p1 (0 $yCylinderTop 0); 
+        radius1 $radiusCylinder; 
+    } 
+  
+     coneRefine
+    {
+    	cellSize $refineCellSize;
+    	type cone;
+    	p0 (0 $waterSurfaceH 0);
+    	radius0 $waterSurfaceRadius;
+    	p1 (0 $blastTubeInletH 0);
+    	radius1 $blastTubeRadius;
+    }
+    /*
+    topConeRefine 
+    {
+         cellSize $vaporSpaceCellSize; 
+         type cone; 
+         p0 (0 $yCylinderBase 0); 
+         radius0 $radiusCylinder;
+         p1 (0 15 0); 
+         radius1 $radiusCylinder; 
+    } */
+
+
+}
+
+/*
+boundaryLayers
+{
+    nLayers 1;
+
+    thicknessRatio 1.1;
+
+    maxFirstLayerThickness 0.1;
+
+    patchBoundaryLayers
+    {
+      "auto.*"
+        {
+            nLayers           1;
+
+            thicknessRatio    1.1;
+
+            maxFirstLayerThickness .01;
+
+            allowDiscontinuity 0;
+        }
+
+    }
+}
+
+*/
+
+/*
+renameBoundary
+{
+    defaultName		junk;
+    defaultType		wall;
+
+    newPatchNames
+    {
+        "inl.*"
+        {
+            newName     testo;
+            newType     patch;
+        }
+
+    }
+}*/
+               
+     
+// ************************************************************************* //

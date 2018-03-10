@@ -1,0 +1,161 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      particleProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+solution
+{
+    active          true;
+    coupled         false;
+    transient       yes;
+    cellValueSourceCorrection off;
+    maxCo           2.0;
+
+    sourceTerms
+    {
+        schemes
+        {
+        }
+    }
+
+    integrationSchemes
+    {
+        U               Euler;
+    }
+
+    interpolationSchemes
+    {
+        rho         cell;
+        U           cellPoint;
+        mu          cell;
+    }
+  
+}
+
+constantProperties
+{
+    rho0            1089;
+	youngsModulus   700e9;
+	poissonsRatio   0.187;
+}
+
+subModels
+{
+	particleForces
+	{
+		sphereDrag;
+		gravity;
+	}
+
+    injectionModels
+    {
+            model1
+            {
+                type            patchInjection;
+                parcelBasisType fixed;
+                patchName       inlet;
+                nParticle       1;
+  	 			sizeDistribution
+     			{
+				    type RosinRammler;
+				    RosinRammlerDistribution
+				    {
+					    minValue 4e-6;
+					    maxValue 350e-6;
+					    d 175e-6;
+					    n 2;
+				    }
+			    }
+			    duration            100;
+			    parcelsPerSecond   10000;
+			    SOI 0; //Start of injection
+			    U0              ( 0 0 -66 );
+  				massTotal 0;
+			    flowRateProfile constant 1;
+		    }
+    }
+
+    dispersionModel none;
+
+    collisionModel none;
+
+    patchInteractionModel localInteraction;
+    localInteractionCoeffs
+    {
+        patches
+        (
+            inletPipe
+            {
+                type rebound;
+                e    0.97;
+                mu   0.09;
+            }
+            inletPlume
+            {
+                type rebound;
+                e    0.97;
+                mu   0.09;
+            }
+            block
+            {
+                type rebound;
+                e   0.97;
+                mu  0.09;
+            }
+            vessel
+            {
+                type rebound;
+                e .97;
+                mu 0.09;
+            }
+            inlet
+            {
+                type rebound;
+                e    0.97;
+                mu   0.09;
+            }
+            outlet
+            {
+                type escape;
+            }
+            outletSlurry
+            {
+                type escape;
+            }
+        );
+    }
+
+    heatTransferModel none;
+
+    surfaceFilmModel none;
+
+    packingModel none; //implicit;
+
+    dampingModel none;
+
+    isotropyModel none;
+
+    stochasticCollisionModel none;
+
+    radiation off;
+}
+
+cloudFunctions
+{
+    	
+}
+
+
+// ************************************************************************* //

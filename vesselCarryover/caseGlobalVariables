@@ -1,0 +1,17 @@
+// boundary conditions
+UInlet 40.6;
+UOutletSlurry -1.21;
+alphaInlet 0.0530;
+
+// transport properties
+nuw 1.19e-7; //slurry kinematic viscosity
+rhow 1137.6; //slurry density
+nus 2.06e-6; // steam kinematic viscosity
+rhos 7.86; // steam density
+surfaceTension 0.0377; 
+
+// set fields
+slurryDepth 4;
+
+//control
+endTimeVar 140;
