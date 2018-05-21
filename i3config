@@ -67,10 +67,10 @@ bindsym $mod+Shift+l move right
 #bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+g split h
+bindsym $mod+period split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+semicolon split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -87,7 +87,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+F1 focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
