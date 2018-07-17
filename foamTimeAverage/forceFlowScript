@@ -1,0 +1,42 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+
+echo "triName flow0.stl;" > triName
+runApplication postProcess -func 'volFlowRateSurface(name=flow0)'
+mv log.postProcess flow0.txt
+echo "triName flow1.stl;" > triName
+runApplication postProcess -func 'volFlowRateSurface(name=flow1)' 
+mv log.postProcess flow1.txt
+echo "triName flow2.stl;" > triName
+runApplication postProcess -func 'volFlowRateSurface(name=flow2)' 
+mv log.postProcess flow2.txt
+echo "triName flow3.stl;" > triName
+runApplication postProcess -func 'volFlowRateSurface(name=flow3)'
+mv log.postProcess flow3.txt
+echo "triName jet0.stl;" > triName
+runApplication postProcess -func 'patchIntegrate(name=flow0,p)'
+mv log.postProcess jet0.txt
+echo "triName jet1.stl;" > triName
+runApplication postProcess -func 'patchIntegrate(name=flow1,p)'
+mv log.postProcess jet1.txt
+echo "triName jet2.stl;" > triName
+runApplication postProcess -func 'patchIntegrate(name=flow2,p)'
+mv log.postProcess jet2.txt
+echo "triName jet3.stl;" > triName
+runApplication postProcess -func 'patchIntegrate(name=flow3,p)'
+mv log.postProcess jet3.txt
+
+cat flow0.txt | grep "of U" > flow0m.txt
+cat flow1.txt | grep "of U" > flow1m.txt
+cat flow2.txt | grep "of U" > flow2m.txt
+cat flow3.txt | grep "of U" > flow3m.txt
+
+cat jet0.txt | grep "of p" > jet0m.txt
+cat jet1.txt | grep "of p" > jet1m.txt
+cat jet2.txt | grep "of p" > jet2m.txt
+cat jet3.txt | grep "of p" > jet3m.txt
+
