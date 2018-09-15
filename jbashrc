@@ -28,4 +28,5 @@ alias boxI='surfaceCheck constant/triSurface/inlet.stl| grep Box'
 alias boxO='surfaceCheck constant/triSurface/outlet.stl| grep Box'
 alias boxB='surfaceCheck constant/triSurface/body.stl| grep Box'
 alias boxV='surfaceCheck constant/triSurface/vessel.stl| grep Box'
+alias tri='cd constant/triSurface'
 
