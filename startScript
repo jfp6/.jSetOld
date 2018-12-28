@@ -102,6 +102,7 @@ if [ $MACHINE == "iron" ]
     sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
     sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
     sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    xsetroot -solid "#333333"
 fi 
 
 if [ $MACHINE == "envy" ]
