@@ -37,11 +37,13 @@ alias lp='bash /home/joseph/brahms/cpu/checkCpus.sh'
 directory_stack=~/brahms/.directory_stack
 function pu() {
         echo $(pwd) >> $directory_stack
-            cd $1
+        cat $directory_stack
 }
 function po() {
         [ ! -s $directory_stack ] && return
-            newdir=$(sed -n '$p' $directory_stack)
-                sed -i -e '$d' $directory_stack
-                    cd $newdir
+        newdir=$(sed -n '$p' $directory_stack)
+        sed -i -e '$d' $directory_stack
+        cat $directory_stack
+        cd $newdir
+
 }
