@@ -35,7 +35,7 @@ alias key='source ~/.jSet/jkeyboard'
 alias lp='bash /home/joseph/brahms/cpu/checkCpus.sh'
 
 directory_stack=~/brahms/.directory_stack
-function pd() {
+function pu() {
         echo $(pwd) >> $directory_stack
             cd $1
 }
