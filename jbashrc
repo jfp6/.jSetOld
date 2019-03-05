@@ -1,10 +1,10 @@
 # OpenFOAM
 alias of4='source /opt/openfoam4/etc/bashrc'
 alias ofe='source $HOME/foam/foam-extend-3.2/etc/bashrc'
-alias ofp='source $HOME/OpenFOAM/OpenFOAM-plus/etc/bashrc'
+alias ofp='source $HOME/OpenFOAM/OpenFOAM-v1812/etc/bashrc'
 alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
 alias py3='conda activate py3'
-source /opt/openfoam-dev/etc/bashrc
+alias ofo='source /opt/openfoam-dev/etc/bashrc'
 alias de3='conda deactivate'
 alias oxygen='firefox file://$WM_PROJECT_DIR/doc/Doxygen/html/index.html'
 alias userGuide='xpdf $WM_PROJECT_DIR/doc/Guides-a4/UserGuide.pdf'
