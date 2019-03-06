@@ -33,6 +33,7 @@ alias boxV='surfaceCheck constant/triSurface/vessel.stl| grep Box'
 alias tri='cd constant/triSurface'
 alias key='source ~/.jSet/jkeyboard'
 alias lp='bash /home/joseph/brahms/cpu/checkCpus.sh'
+alias jn='jupyter notebook'
 
 directory_stack=~/brahms/.directory_stack
 function pu() {
