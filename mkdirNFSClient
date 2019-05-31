@@ -9,6 +9,7 @@ sudo mkdir -p /mnt/nfs/haydn
 sudo mkdir -p /mnt/nfs/home
 sudo mkdir -p /mnt/nfs/vivaldi
 sudo mkdir -p /mnt/nfs/chopin
+sudo mkdir -p /mnt/nfs/telemann
 echo "mkdir nfs directories"
 
 ln -s /mnt/nfs/bach/ ~/bach
@@ -20,5 +21,6 @@ ln -s /mnt/nfs/haydn/ ~/haydn
 ln -s /mnt/nfs/home/joseph/OpenFOAM ~/OpenFOAM
 ln -s /mnt/nfs/vivaldi/ ~/vivaldi
 ln -s /mnt/nfs/chopin/ ~/chopin
+ln -s /mnt/nfs/telemann ~/telemann
 echo "add soft links"
 

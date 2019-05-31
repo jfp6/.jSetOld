@@ -37,6 +37,8 @@ if [ $MACHINE == "aluminum" ]
     sudo mount /dev/sdh /media/joseph/work
     sudo mount /dev/sdd1 /media/joseph/chopin
 
+    sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
+
     sudo exportfs -a
     sudo service nfs-kernel-server start
     sudo /etc/init.d/opensmd start
@@ -54,7 +56,10 @@ if [ $MACHINE == "gold" ]
     sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
     sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
     sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
-    sudo mount paladium:/home /mnt/nfs/paladiumHome
+    
+    sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
+    
+
     sudo exportfs -a
     sudo service nfs-kernel-server start
  
@@ -102,6 +107,9 @@ if [ $MACHINE == "iron" ]
     sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
     sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
     sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    
+    sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
+    
     xsetroot -solid "#333333"
 fi 
 
@@ -134,6 +142,28 @@ if [ $MACHINE == "india" ]
     sudo service nmbd restart
 fi
 
+if [ $MACHINE == "rhodium" ]
+    then
+    echo "start rhodium"
+    sudo mount /dev/sda1 /media/joseph/telemann
+
+    sudo exportfs -a
+    sudo service nfs-kernel-server start
+    #sudo /etc/init.d/opensmd start
+
+    # from iron
+    sudo mount 172.17.1.232:/media/joseph/mozart /mnt/nfs/mozart
+    sudo mount 172.17.1.232:/media/joseph/bach /mnt/nfs/bach
+    sudo mount 172.17.1.232:/home /mnt/nfs/home
+    sudo mount 172.17.1.232:/media/joseph/vivaldi /mnt/nfs/vivaldi
+    sudo mount 172.17.1.232:/media/joseph/chopin /mnt/nfs/chopin
+    sudo mount 172.17.1.232:/media/joseph/work /mnt/nfs/work
+    sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
+    sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
+    xsetroot -solid "#333333"
+
+
+fi
 
 
 
