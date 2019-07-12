@@ -38,6 +38,7 @@ if [ $MACHINE == "aluminum" ]
     sudo mount /dev/sdd1 /media/joseph/chopin
 
     sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.164:/media/joseph/handel /mnt/nfs/handel
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
@@ -58,6 +59,7 @@ if [ $MACHINE == "gold" ]
     sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
     
     sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.164:/media/joseph/handel /mnt/nfs/handel
     
 
     sudo exportfs -a
@@ -109,7 +111,9 @@ if [ $MACHINE == "iron" ]
     sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
     
     sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.164:/media/joseph/handel /mnt/nfs/handel
     
+
     xsetroot -solid "#333333"
 fi 
 
@@ -146,7 +150,7 @@ if [ $MACHINE == "rhodium" ]
     then
     echo "start rhodium"
     sudo mount /dev/sda1 /media/joseph/telemann
-
+    sudo mount /dev/nvme1n1p1 /media/joseph/handel
     sudo exportfs -a
     sudo service nfs-kernel-server start
     #sudo /etc/init.d/opensmd start
