@@ -18,6 +18,7 @@ alias makeVideo20='ffmpeg -r 20 -i image.%04d.png atest20.mp4 -qscale 1'
 alias makeVideo30='ffmpeg -r 30 -i image.%04d.png atest30.mp4 -qscale 1'
 alias makeVideo40='ffmpeg -r 40 -i image.%04d.png atest40.mp4 -qscale 1'
 alias makeVideo100='ffmpeg -r 100 -i image.%04d.png atest100.mp4 -qscale 1'
+alias mplayer='mplayer -loop 0 -fs atest*'
 alias cCount='checkMesh |grep cell'
 alias tLog='tail -f log | grep -E '"'"'(Time|deltaT)'"'"
 alias rPar='reconstructPar -newTimes'
