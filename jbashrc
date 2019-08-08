@@ -6,7 +6,7 @@ export PYTHONPATH="$PYTHONPATH}:/opt/paraviewopenfoam56/lib/paraview-5.6"
 
 alias of4='source /opt/openfoam4/etc/bashrc'
 alias ofe='source $HOME/foam/foam-extend-3.2/etc/bashrc'
-alias ofp='source $HOME/OpenFOAM/OpenFOAM-v1812/etc/bashrc'
+alias ofp='source $HOME/OpenFOAM/OpenFOAM-v1906/etc/bashrc'
 alias ofdev='source $HOME/OpenFOAM/OpenFOAM-dev/etc/bashrc'
 alias py3='conda activate py3'
 alias ofo='source /opt/openfoam-dev/etc/bashrc'
