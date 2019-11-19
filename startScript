@@ -37,8 +37,8 @@ if [ $MACHINE == "aluminum" ]
     sudo mount /dev/sdh /media/joseph/work
     sudo mount /dev/sdd1 /media/joseph/chopin
 
-    sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
-    sudo mount 172.17.1.164:/media/joseph/handel /mnt/nfs/handel
+    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
 
     sudo exportfs -a
     sudo service nfs-kernel-server start
@@ -58,8 +58,8 @@ if [ $MACHINE == "gold" ]
     sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
     sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
     
-    sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
-    sudo mount 172.17.1.164:/media/joseph/handel /mnt/nfs/handel
+    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
     
 
     sudo exportfs -a
@@ -110,8 +110,8 @@ if [ $MACHINE == "iron" ]
     sudo mount 172.17.1.232:/media/joseph/brahms /mnt/nfs/brahms
     sudo mount 172.17.1.232:/media/joseph/haydn /mnt/nfs/haydn
     
-    sudo mount 172.17.1.164:/media/joseph/telemann /mnt/nfs/telemann
-    sudo mount 172.17.1.164:/media/joseph/handel /mnt/nfs/handel
+    sudo mount 172.17.1.239:/media/joseph/telemann /mnt/nfs/telemann
+    sudo mount 172.17.1.239:/media/joseph/handel /mnt/nfs/handel
     
 
     xsetroot -solid "#333333"
