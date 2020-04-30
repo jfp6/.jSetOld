@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bash ~/OpenFOAM/joseph-dev/scripts/timeCheck/extractLog.sh "$@"

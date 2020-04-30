@@ -22,7 +22,7 @@ alias mplayer='mplayer -loop 0 -fs atest*'
 alias cCount='checkMesh |grep cell'
 alias tLog='tail -f log | grep -E '"'"'(Time|deltaT)'"'"
 alias rPar='reconstructPar -newTimes'
-alias pPar='/home/joseph/.jSet/pReconstructPar'
+alias pPar='~/.jSet/pReconstructPar'
 alias moz='cd mozart/of30x/'
 alias his='history | grep'
 alias para='paraFoam -builtin'
@@ -41,6 +41,7 @@ alias tri='cd constant/triSurface'
 alias key='source ~/.jSet/jkeyboard'
 alias lp='bash /home/joseph/brahms/cpu/checkCpus.sh'
 alias jn='jupyter notebook'
+alias tc='~/.jSet/timeCheck'
 
 directory_stack=~/brahms/.directory_stack
 function pu() {
