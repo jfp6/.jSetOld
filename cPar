@@ -8,7 +8,8 @@
 #runApplication reconstructPar -newTimes
 
 while true; do
-    runApplication -newTimes
+    runApplication reconstructPar -newTimes
+    rm log.reconstructPar
     sleep 300
 done
 
