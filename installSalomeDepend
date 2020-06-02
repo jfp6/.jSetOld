@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo apt install gcc  g++ gfortran cmake python python-dev python-numpy tk bison flex liblapack-dev libblas-dev libopenblas-dev libboost-python-dev libboost-numpy-dev zlib1g-dev
+
